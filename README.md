@@ -57,7 +57,7 @@ Inheritance: Extending base classes
 
 Properties: @property decorators for clean getters/setters
 
-💭 Next Steps for Mastery
+# Next Steps for Mastery 💭
 Practice with coding challenges (LeetCode, HackerRank)
 
 Build small projects (calculator, to-do list)
