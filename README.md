@@ -1,301 +1,369 @@
 <div align="center">
 
-# 🐍 Learn Python
+# 🚦 Network Traffic Classification Using Random Forest
 
-![Python](https://img.shields.io/badge/Python-3.8%2B-blue?style=for-the-badge&logo=python&logoColor=white)
-![Beginner Friendly](https://img.shields.io/badge/Level-Beginner-green?style=for-the-badge)
-![Practice](https://img.shields.io/badge/Practice-Code%20Examples-orange?style=for-the-badge)
-![Open Source](https://img.shields.io/badge/Open%20Source-Yes-brightgreen?style=for-the-badge)
-![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)
+<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=24&pause=1000&center=true&vCenter=true&width=700&lines=Machine+Learning+for+Network+Intrusion+Detection;Random+Forest+Traffic+Classification;Cybersecurity+%2B+Machine+Learning+Project;Detect+Malicious+Network+Traffic+Automatically" alt="Typing Animation" />
 
-<br/>
+![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python)
+![Machine Learning](https://img.shields.io/badge/Machine%20Learning-ScikitLearn-orange)
+![Status](https://img.shields.io/badge/Project-Active-success)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-> **A beginner-friendly repository to learn Python programming from scratch through simple explanations and practical code examples.**
-
-<br/>
-
-[📚 Overview](#-overview) • [🧠 Key Concepts](#-key-concepts) • [🗺️ Learning Path](#️-my-learning-path) • [📦 Data Structures](#-data-structure-mastery) • [🚀 Next Steps](#-next-steps-for-mastery) • [⚙️ Getting Started](#️-getting-started)
+A beginner-friendly machine learning project that classifies network traffic as **Normal** or **Attack** using the **Random Forest algorithm**.
 
 </div>
 
 ---
 
-# 📚 Overview
+# 📑 Table of Contents
 
-**learnPython** is a repository designed to help anyone start learning **Python programming from scratch**.
+* Overview
+* Project Objective
+* Tools Used
+* Libraries USED
+* How It Works — Step-by-step
+* Workflow
+* Key Concepts
+* What I Learned
+* Through this project I also gained insight into
+* Project Structure
+* How to Run the Project
+* Future Improvements
+* Author
+* License
 
-Whether you are a:
+---
 
-- 🎓 Student  
-- 💻 Aspiring developer  
-- 🧑‍💻 Hobbyist  
-- 🎯 Self-taught programmer  
+# 📘 Overview
 
-This repository provides **simple explanations and clean code examples** to help build a strong foundation in Python programming.
+Network security is one of the most critical challenges in modern computing systems. As networks grow larger and more complex, detecting malicious activities manually becomes extremely difficult.
 
-By working through this repository you will:
+Machine learning provides a powerful solution by automatically analyzing patterns in network traffic and identifying suspicious behavior.
 
-- ✅ Understand Python fundamentals  
-- ✅ Learn important programming concepts  
-- ✅ Practice with real code examples  
-- ✅ Build confidence writing Python programs  
+This project demonstrates how a **Random Forest classifier** can be used to analyze network traffic and classify each connection as either:
 
-Feel free to **explore, practice, and contribute!**
+• **Normal traffic**
+• **Attack traffic**
+
+By training the model on historical network data, it learns patterns that distinguish safe connections from malicious ones.
+
+The project also demonstrates a **complete machine learning workflow**, including preprocessing, model training, hyperparameter tuning, and evaluation.
+
+---
+
+# 🎯 Project Objective
+
+The main goals of this project are:
+
+• Build a **machine learning classifier for intrusion detection**
+• Understand how **Random Forest works for classification tasks**
+• Learn the **complete machine learning pipeline**
+• Practice **data preprocessing and feature encoding**
+• Evaluate model performance using **standard ML metrics**
+
+---
+
+# 🛠 Tools Used
+
+The following tools were used to build this project.
+
+### Python
+
+The primary programming language used to implement the machine learning system.
+
+### Jupyter Notebook
+
+Used for experimentation, testing, and interactive model development.
+
+### Git & GitHub
+
+Used for version control and project sharing.
+
+---
+
+# 📚 Libraries USED
+
+This project relies on several powerful Python libraries.
+
+### pandas
+
+Used for data loading, cleaning, and manipulation of tabular datasets.
+
+### scikit-learn
+
+Provides machine learning tools including:
+
+• Random Forest classifier
+• Train-test splitting
+• Hyperparameter tuning
+• Evaluation metrics
+
+### numpy
+
+Used for numerical operations and array manipulation.
+
+### scipy
+
+Supports scientific computations used by machine learning algorithms.
+
+Install the required libraries using:
+
+```
+pip install pandas scikit-learn numpy scipy
+```
+
+---
+
+# ⚙️ How It Works — Step-by-step
+
+The machine learning system works through the following steps:
+
+1. Load the dataset into a pandas DataFrame.
+2. Separate the dataset into **features (inputs)** and **labels (target values)**.
+3. Handle missing values using the **most frequent value in each column**.
+4. Convert categorical features into numerical form.
+5. Convert labels into binary values:
+
+```
+0 = Normal Traffic
+1 = Attack Traffic
+```
+
+6. Split the dataset into **training data (70%)** and **testing data (30%)**.
+7. Apply **GridSearchCV** to find the best Random Forest parameters.
+8. Train the optimized model using the training dataset.
+9. Evaluate model performance using classification metrics.
+
+---
+
+# 🔄 Workflow
+
+Below is the complete machine learning workflow used in this project.
+
+```mermaid
+flowchart TD
+    A[Load Dataset] --> B[Data Cleaning]
+    B --> C[Handle Missing Values]
+    C --> D[Encode Categorical Features]
+    D --> E[Split Train and Test Data]
+    E --> F[Hyperparameter Tuning using GridSearchCV]
+    F --> G[Train Random Forest Model]
+    G --> H[Evaluate Model]
+    H --> I[Classification Results]
+```
+
+This diagram represents the **full machine learning pipeline** implemented in the project.
 
 ---
 
 # 🧠 Key Concepts
 
-| Concept | Description |
-|------|-------------|
-| 📝 Comments | Single-line `#` and multi-line `""" """` documentation |
-| ➗ Math Operations | `+`, `-`, `*`, `/`, `//`, `%`, `**` with proper precedence |
-| 🔘 Boolean Logic | `True`, `False`, `and`, `or`, `not` |
-| ⚖️ Comparisons | `==`, `!=`, `<`, `>`, `<=`, `>=`, `is` |
-| 🧵 Strings | f-strings, concatenation, indexing |
-| 📦 Data Structures | Lists, tuples, dictionaries, sets |
-| ⚙️ Advanced Python | Generators, functions, classes, inheritance, properties |
+## Random Forest
+
+Random Forest is an **ensemble learning algorithm** that combines multiple decision trees to improve prediction accuracy.
+
+Instead of relying on a single tree, Random Forest creates many trees and aggregates their predictions.
+
+Advantages:
+
+• High accuracy
+• Reduced overfitting
+• Handles complex datasets well
 
 ---
 
-# 🗺️ My Learning Path
+## Stratify
 
-My Python learning journey followed a **step-by-step progression** to build a strong understanding of the language.
-
-### 1️⃣ Start with the Basics
-
-I started with the basics:
-
-- Comments
-- Numbers
-- Math operations
-
-These are the **foundation of programming**.
-
-### 2️⃣ Boolean Logic & Comparisons
-
-Next came logical thinking:
-
-- `True` and `False`
-- Logical operators (`and`, `or`, `not`)
-- Comparison operators (`==`, `>`, `<`, etc.)
-
-These are essential for **decision-making in programs**.
-
-### 3️⃣ Strings
-
-Strings are everywhere in programming. Topics include:
-
-- String concatenation
-- Indexing
-- f-strings
-- Formatting text
-
-### 4️⃣ Built-in Data Structures
-
-Then I explored Python’s powerful data structures:
-
-- Lists
-- Tuples
-- Dictionaries
-- Sets
-
-### 5️⃣ Functions
-
-Functions allow us to **write reusable code**.
-
-Topics include:
-
-- Parameters
-- Return values
-- `*args`
-- `**kwargs`
-
-### 6️⃣ Object-Oriented Programming
-
-Finally, I learned how Python handles OOP:
-
-- Classes
-- Methods
-- Inheritance
-- Properties
-
-Each concept builds on the previous one.  
-**Master the basics first—they unlock everything else.**
-
----
-
-# 📖 What You'll Learn
-
-Some important programming insights covered in this repository:
-
-### 🔢 Order of Operations
-Parentheses control mathematical precedence.
-
-### 🔎 Truthiness
-In Python:
-
-True = 1  
-False = 0  
-
-These values can be used in mathematical contexts.
-
-### ⚖️ Identity vs Equality
-
-- `==` checks if values are equal  
-- `is` checks if objects are the same in memory
-
-### 🔄 Mutable vs Immutable
-
-- Lists are **mutable** (can change)
-- Tuples are **immutable** (cannot change)
-
----
-
-# 📦 Data Structure Mastery
-
-| Data Structure | Example | Description |
-|---------------|--------|-------------|
-| Lists | `[1, 2, 3]` | Ordered and mutable |
-| Tuples | `(1, 2, 3)` | Ordered and immutable |
-| Dictionaries | `{"key": "value"}` | Key-value pairs |
-| Sets | `{1, 2, 3}` | Unique and unordered |
-
-Mastering these structures is essential for **efficient Python programming**.
-
----
-
-# 🎨 Advanced Patterns
-
-Once the basics are understood, Python offers powerful advanced programming tools.
-
-### Generators
-Memory-efficient iteration using `yield`.
-
-### Functions
-Reusable blocks of code using:
-
-- Parameters
-- Return values
-- `*args`
-- `**kwargs`
-
-### Classes
-Python’s object-oriented structure includes:
-
-- `self`
-- `__init__`
-- Methods
-
-### Inheritance
-Extend existing classes to reuse functionality.
-
-### Properties
-Use `@property` decorators to create clean getters and setters.
-
----
-
-# 🚀 Next Steps for Mastery
-
-After learning the fundamentals, continue improving by:
-
-- Practicing coding challenges on **LeetCode** or **HackerRank**
-- Building small projects such as:
-  - Calculator
-  - To-Do List
-  - Number Guessing Game
-- Learning **list comprehensions**
+Stratification ensures that **training and testing datasets maintain the same class distribution**.
 
 Example:
 
-[x * 2 for x in range(5)]
+```
+Normal Traffic = 70%
+Attack Traffic = 30%
+```
 
-- Learning **error handling** using `try` and `except`
-- Exploring **modules and packages**
-- Mastering **virtual environments (venv)**
-
----
-
-# ⚙️ Getting Started
-
-### 1️⃣ Install Python
-
-Download Python from:
-
-https://www.python.org
+Both datasets preserve this ratio to prevent bias.
 
 ---
 
-### 2️⃣ Open Terminal or Command Prompt
+## Hyperparameters
 
-Start Python by typing:
+Hyperparameters are configuration values that control how the model learns.
 
-python
+Examples:
 
-This opens the **Python REPL (interactive shell)**.
+```
+n_estimators
+max_depth
+min_samples_split
+```
 
----
-
-### 3️⃣ Run Python Files
-
-Save your file as:
-
-example.py
-
-Then run it using:
-
-python example.py
+These parameters are optimized using **GridSearchCV**.
 
 ---
 
-# 📁 Example Repository Structure
+## Evaluation Metrics
 
-📦 learnPython  
- ┣ 📂 basics  
- ┃ ┣ comments.py  
- ┃ ┣ numbers.py  
- ┃ ┗ math_operations.py  
- ┣ 📂 strings  
- ┃ ┗ string_examples.py  
- ┣ 📂 data_structures  
- ┃ ┣ lists.py  
- ┃ ┣ tuples.py  
- ┃ ┣ dictionaries.py  
- ┃ ┗ sets.py  
- ┣ 📂 functions  
- ┃ ┗ functions_examples.py  
- ┣ 📂 oop  
- ┃ ┣ classes.py  
- ┃ ┗ inheritance.py  
- ┗ README.md
+The model performance is evaluated using several metrics.
+
+### Accuracy
+
+Overall proportion of correct predictions.
+
+```
+Accuracy = Correct Predictions / Total Predictions
+```
+
+### Precision
+
+Measures how many predicted attacks were actually attacks.
+
+### Recall
+
+Measures how many real attacks were detected.
+
+### F1 Score
+
+Balances both precision and recall.
 
 ---
 
-# 🤝 Contributing
+# 🎓 What I Learned
 
-Contributions are welcome!
+Through this project, I gained practical experience in:
 
-1. Fork the repository  
-2. Create a new branch
+• Building a **machine learning classification model**
+• Data preprocessing and feature engineering
+• Hyperparameter tuning using **GridSearchCV**
+• Understanding ensemble learning methods
+• Evaluating models using **classification metrics**
 
-git checkout -b feature/new-feature
+This project strengthened my understanding of **machine learning and cybersecurity applications**.
 
-3. Commit your changes
+---
 
-git commit -m "Add new examples"
+# 💡 Through this project I also gained insight into
 
-4. Push your branch
+• How machine learning can support **intrusion detection systems**
+• The importance of **data preprocessing** in ML pipelines
+• Why ensemble models like **Random Forest perform well**
+• How balanced datasets improve model reliability
+• Best practices for structuring a **machine learning project**
 
-git push origin feature/new-feature
+---
 
-5. Open a Pull Request
+# 📁 Project Structure
+
+```
+network-traffic-classification
+│
+├── KDDDataset.txt
+├── model.ipynb
+├── model.py
+├── README.md
+```
+
+Description:
+
+• **KDDDataset.txt** → Network traffic dataset
+• **model.ipynb** → Jupyter notebook implementation
+• **model.py** → Python script version of the model
+• **README.md** → Project documentation
+
+---
+
+# ▶️ How to Run the Project
+
+### Step 1 — Clone the Repository
+
+```
+git clone https://github.com/ft-FiasCode/network-traffic-classification.git
+```
+
+### Step 2 — Navigate to the Project Directory
+
+```
+cd network-traffic-classification
+```
+
+### Step 3 — Install Required Libraries
+
+```
+pip install pandas scikit-learn numpy scipy
+```
+
+### Step 4 — Add the Dataset
+
+Place the dataset file in the project directory:
+
+```
+KDDDataset.txt
+```
+
+### Step 5 — Run the Project
+
+Run using Jupyter Notebook:
+
+```
+jupyter notebook
+```
+
+or run the Python script:
+
+```
+python model.py
+```
+
+The model will train and display evaluation results.
+
+---
+
+# 🚀 Future Improvements
+
+Possible improvements for this project include:
+
+• Adding **data visualization using Matplotlib and Seaborn**
+• Testing additional algorithms such as **SVM and Logistic Regression**
+• Building a **real-time intrusion detection system**
+• Deploying the model using **Flask or FastAPI**
+• Performing **feature importance analysis**
+
+---
+
+# 👨‍💻 Author
+
+**ft-FiasCode**
+
+GitHub: [https://github.com/ft-FiasCode](https://github.com/ft-FiasCode)
+
+---
+
+# 📜 License
+
+MIT License: ![License](https://img.shields.io/badge/License-MIT-green.svg)
+
+This project is open-source and free to use, modify, and distribute.
+
+
+# 👨‍💻 Author Badges
+
+![Author](https://img.shields.io/badge/Author-ft--FiasCode-blue?style=flat&logo=github)
+![GitHub](https://img.shields.io/badge/GitHub-ft--FiasCode-181717?logo=github&logoColor=white)
+
+---
+
+# 📜 License & Tech Badges
+
+![License](https://img.shields.io/badge/License-MIT-green)
+![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python&logoColor=yellow)
+![Status](https://img.shields.io/badge/Status-Active-brightgreen)
+
 
 ---
 
 <div align="center">
 
-### ⭐ If this repository helps you learn Python, please consider giving it a star!
-
-Happy Coding! 🐍🚀
+⭐ If you found this project useful, consider **starring the repository**.
 
 </div>
